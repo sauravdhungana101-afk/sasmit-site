@@ -756,7 +756,6 @@ const Alignment = ({ t, lang }: { t: any, lang: Language }) => {
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ 
                 scale: 1.08,
                 rotate: [0, -5, 5, -5, 0],
@@ -771,6 +770,8 @@ const Alignment = ({ t, lang }: { t: any, lang: Language }) => {
                 y: [0, -10, 0],
               }}
               transition={{
+                duration: 0.8, 
+                ease: "easeOut",
                 y: {
                   duration: 3,
                   repeat: Infinity,

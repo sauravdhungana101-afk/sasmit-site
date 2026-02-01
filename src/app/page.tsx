@@ -85,7 +85,8 @@ const content = {
       desc: "This campaign is powered by citizens, not corporations. Your contribution helps us maintain independence and reach every corner of Kathmandu-5.",
       cta: "CONTRIBUTE NOW",
       transparency: "100% Transparent • Citizen Funded"
-    }
+    },
+    commitmentLetterFull: ""
   },
   ne: {
     nav: {

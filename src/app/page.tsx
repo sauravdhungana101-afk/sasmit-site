@@ -237,7 +237,7 @@ const Navbar = ({ lang, setLang, t, joinLink }: { lang: Language, setLang: (l: L
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-white/80 backdrop-blur-xl shadow-lg py-3" : "bg-transparent py-6"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? "bg-white/80 backdrop-blur-xl shadow-lg py-3" : "bg-transparent py-6"}`}>
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <motion.h1 
           initial={{ opacity: 0 }}
@@ -273,7 +273,7 @@ const Navbar = ({ lang, setLang, t, joinLink }: { lang: Language, setLang: (l: L
 const Hero = ({ t, lang, joinLink }: { t: any, lang: Language, joinLink: string }) => {
   return (
     <section className="relative min-h-screen flex flex-col pt-32 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <video 
           autoPlay 
           loop 

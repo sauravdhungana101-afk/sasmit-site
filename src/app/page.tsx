@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Facebook, Twitter, Instagram, ArrowRight, Globe, X, Play } from "lucide-react";
+import { Facebook, Instagram, ArrowRight, Globe, X, Play, Music2 } from "lucide-react";
 import { client, urlFor } from "@/lib/sanity";
 
 // --- Types & Content ---
@@ -1086,7 +1086,7 @@ const Donation = ({ t, lang, donationLink }: { t: any, lang: Language, donationL
   );
 };
 
-const Footer = ({ t, lang, socials }: { t: any, lang: Language, socials?: { facebook?: string, twitter?: string, instagram?: string } }) => {
+const Footer = ({ t, lang, socials }: { t: any, lang: Language, socials?: { facebook?: string, tiktok?: string, instagram?: string } }) => {
   return (
     <footer className="bg-white border-t border-gray-100 py-12">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 items-center gap-8">
@@ -1100,9 +1100,9 @@ const Footer = ({ t, lang, socials }: { t: any, lang: Language, socials?: { face
               <Facebook className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
             </a>
           )}
-          {socials?.twitter && (
-            <a href={socials.twitter} target="_blank" rel="noopener noreferrer">
-              <Twitter className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
+          {socials?.tiktok && (
+            <a href={socials.tiktok} target="_blank" rel="noopener noreferrer">
+              <Music2 className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
             </a>
           )}
           {socials?.instagram && (
@@ -1113,7 +1113,7 @@ const Footer = ({ t, lang, socials }: { t: any, lang: Language, socials?: { face
           {!socials && (
             <>
               <Facebook className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
-              <Twitter className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
+              <Music2 className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
               <Instagram className="w-6 h-6 hover:text-rsp-blue cursor-pointer transition-colors" />
             </>
           )}
@@ -1233,7 +1233,7 @@ export default function Home() {
   const blacklist = cmsData?.settings?.newsBlacklist || ["scandal", "arrest", "fraud", "corruption", "fake", "controversy", "crime", "allegation", "murder", "lawsuit"];
   const socials = cmsData?.settings ? {
     facebook: cmsData.settings.facebookUrl,
-    twitter: cmsData.settings.twitterUrl,
+    tiktok: cmsData.settings.tiktokUrl,
     instagram: cmsData.settings.instagramUrl,
   } : undefined;
 

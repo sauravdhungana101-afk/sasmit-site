@@ -133,6 +133,12 @@ export default {
       title: 'Instagram URL',
       type: 'url',
       group: 'social'
+    },
+    {
+      name: 'tiktokUrl',
+      title: 'TikTok URL',
+      type: 'url',
+      group: 'social'
     }
   ],
   groups: [

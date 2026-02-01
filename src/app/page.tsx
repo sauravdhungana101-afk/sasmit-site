@@ -283,8 +283,8 @@ const Hero = ({ t, lang, joinLink }: { t: any, lang: Language, joinLink: string 
         >
           <source src="/flag-loop.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-rsp-blue/25"></div>
-        <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-rsp-blue/25 z-[1]"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60 z-[1]"></div>
       </div>
 
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10 grid lg:grid-cols-2 gap-12 items-center flex-1 w-full">

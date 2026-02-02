@@ -172,3 +172,4 @@ export default {
     { name: 'social', title: 'Social Media' }
   ]
 }
+

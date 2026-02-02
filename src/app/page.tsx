@@ -41,6 +41,7 @@ const content = {
     },
     manifesto: {
       title: "The Manifesto",
+      desc: "Our vision for a modern, digital, and accountable Nepal.",
       points: [
         { title: "Education Reform & Digital Transformation", desc: "Quality, tech-friendly education. Digital Classrooms, ICT Learning, Skills & Entrepreneurship." },
         { title: "Digital Governance & Accountability", desc: "Full digitization of budget & decisions. Mobile services, Performance-based Governance." },
@@ -119,6 +120,7 @@ const content = {
     },
     manifesto: {
       title: "प्रतिबद्धता पत्र",
+      desc: "आधुनिक, डिजिटल र जवाफदेही नेपालका लागि हाम्रो दृष्टिकोण।",
       points: [
         { title: "शिक्षा सुधार र डिजिटल रूपान्तरण", desc: "गुणस्तरीय, समान र प्रविधिमैत्री शिक्षा। डिजिटल कक्षाकोठा, सूचना प्रविधिमा आधारित सिकाइ र उद्यमशीलता।" },
         { title: "डिजिटल सुशासन र जवाफदेहिता", desc: "बजेट र योजनाको पूर्ण डिजिटलाइजेशन। मोबाइलबाटै सरकारी सेवा र नतिजामुखी शासन प्रणाली।" },
@@ -639,68 +641,36 @@ const Manifesto = ({ t, lang }: { t: any, lang: Language }) => {
           </h2>
           <div className="w-12 h-1 bg-rsp-blue mx-auto mb-6"></div>
           <p className={`text-base text-gray-500 font-medium leading-relaxed max-w-lg mx-auto ${lang === "ne" ? "tracking-normal" : ""}`}>
-            Our vision for a modern, digital, and accountable Nepal.
+            {t.manifesto.desc}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 lg:gap-x-24">
-          {/* Left Column (Points 1-3) */}
-          <div className="space-y-8">
-            {t.manifesto.points.slice(0, 3).map((point: any, i: number) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ x: 10 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="group relative p-6 -m-6 hover:bg-rsp-blue/2 rounded-none transition-all duration-300 cursor-default"
-              >
-                <div className="flex items-baseline gap-6">
-                  <span className={`text-4xl md:text-5xl font-black text-gray-100 group-hover:text-rsp-blue transition-colors duration-500 leading-none ${lang === "en" ? "tracking-tighter" : "tracking-normal"}`}>
-                    0{i + 1}
-                  </span>
-                  <div className="space-y-3">
-                    <h3 className={`text-xl md:text-2xl font-bold text-balen-black leading-tight group-hover:text-rsp-blue transition-colors duration-300 ${lang === "en" ? "tracking-tight" : "tracking-normal"}`}>
-                      {point.title}
-                    </h3>
-                    <p className={`text-base text-gray-600 leading-relaxed font-medium ${lang === "ne" ? "tracking-normal font-normal" : ""}`}>
-                      {point.desc}
-                    </p>
-                  </div>
+          {t.manifesto.points.map((point: any, i: number) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ x: 10 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: (i % 2) * 0.1 }}
+              className="group relative p-6 -m-6 hover:bg-rsp-blue/2 rounded-none transition-all duration-300 cursor-default"
+            >
+              <div className="flex items-baseline gap-6">
+                <span className={`text-4xl md:text-5xl font-black text-gray-100 group-hover:text-rsp-blue transition-colors duration-500 leading-none ${lang === "en" ? "tracking-tighter" : "tracking-normal"}`}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="space-y-3">
+                  <h3 className={`text-xl md:text-2xl font-bold text-balen-black leading-tight group-hover:text-rsp-blue transition-colors duration-300 ${lang === "en" ? "tracking-tight" : "tracking-normal"}`}>
+                    {point.title}
+                  </h3>
+                  <p className={`text-base text-gray-600 leading-relaxed font-medium ${lang === "ne" ? "tracking-normal font-normal" : ""}`}>
+                    {point.desc}
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right Column (Points 4-6) */}
-          <div className="space-y-8">
-            {t.manifesto.points.slice(3, 6).map((point: any, i: number) => (
-              <motion.div 
-                key={i + 3}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ x: 10 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="group relative p-6 -m-6 hover:bg-rsp-blue/2 rounded-none transition-all duration-300 cursor-default"
-              >
-                <div className="flex items-baseline gap-6">
-                  <span className={`text-4xl md:text-5xl font-black text-gray-100 group-hover:text-rsp-blue transition-colors duration-500 leading-none ${lang === "en" ? "tracking-tighter" : "tracking-normal"}`}>
-                    0{i + 4}
-                  </span>
-                  <div className="space-y-3">
-                    <h3 className={`text-xl md:text-2xl font-bold text-balen-black leading-tight group-hover:text-rsp-blue transition-colors duration-300 ${lang === "en" ? "tracking-tight" : "tracking-normal"}`}>
-                      {point.title}
-                    </h3>
-                    <p className={`text-base text-gray-600 leading-relaxed font-medium ${lang === "ne" ? "tracking-normal font-normal" : ""}`}>
-                      {point.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -1209,6 +1179,8 @@ export default function Home() {
           mergedContent.hero.constituency = `${s.constituencyNameEn || 'Kathmandu'} Constituency No. ${s.constituencyNumberEn || '5'}`;
         }
         if (s.constituencyDescEn) mergedContent.constituency.desc = s.constituencyDescEn;
+        if (s.manifestoTitleEn) mergedContent.manifesto.title = s.manifestoTitleEn;
+        if (s.manifestoSubEn) mergedContent.manifesto.desc = s.manifestoSubEn;
       } else {
         if (s.heroHeadlineNe) mergedContent.hero.headline = s.heroHeadlineNe;
         if (s.heroSloganNe) mergedContent.hero.slogan = s.heroSloganNe;
@@ -1226,6 +1198,8 @@ export default function Home() {
           mergedContent.hero.constituency = `${s.constituencyNameNe || 'काठमाडौँ'} क्षेत्र नं-${s.constituencyNumberNe || '५'}`;
         }
         if (s.constituencyDescNe) mergedContent.constituency.desc = s.constituencyDescNe;
+        if (s.manifestoTitleNe) mergedContent.manifesto.title = s.manifestoTitleNe;
+        if (s.manifestoSubNe) mergedContent.manifesto.desc = s.manifestoSubNe;
         if (s.commitmentLetterNe) mergedContent.commitmentLetterFull = s.commitmentLetterNe;
       }
     }

@@ -117,6 +117,30 @@ export default {
       description: 'The full text of the commitment letter for the modal'
     },
     {
+      name: 'manifestoTitleEn',
+      title: 'Manifesto Title (English)',
+      type: 'string',
+      group: 'manifesto'
+    },
+    {
+      name: 'manifestoTitleNe',
+      title: 'Manifesto Title (Nepali)',
+      type: 'string',
+      group: 'manifesto'
+    },
+    {
+      name: 'manifestoSubEn',
+      title: 'Manifesto Subtitle (English)',
+      type: 'string',
+      group: 'manifesto'
+    },
+    {
+      name: 'manifestoSubNe',
+      title: 'Manifesto Subtitle (Nepali)',
+      type: 'string',
+      group: 'manifesto'
+    },
+    {
       name: 'facebookUrl',
       title: 'Facebook URL',
       type: 'url',
@@ -143,6 +167,7 @@ export default {
   ],
   groups: [
     { name: 'hero', title: 'Hero Section' },
+    { name: 'manifesto', title: 'Manifesto Section' },
     { name: 'alignment', title: 'Alignment Section' },
     { name: 'social', title: 'Social Media' }
   ]
